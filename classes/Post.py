@@ -53,5 +53,13 @@ class Post:
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
 
+    def add_likes(self):
+        self.likes_counter += 1
+
+    def add_comment(self,text):
+        self.comments.append(text)
+
+
+
 
 
