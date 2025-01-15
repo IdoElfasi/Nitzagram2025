@@ -34,9 +34,8 @@ class Post:
         text = font.render(self.description ,True, BLACK)
         screen.blits(text, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
 
-    def display_comments(self):
-        for comment in self.comments:
-          comment.display()
+
+
 
     def display_username(self):
         font = pygame.font.SysFont("Tahoma", 23)
@@ -45,6 +44,11 @@ class Post:
 
     def display(self):
         self.display_likes()
+        self.display_location()
+        self.display_username()
+        self.display_likes()
+        self.display_description()
+        self.display_comments()
 
 
     def display_comments(self):
