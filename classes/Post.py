@@ -4,6 +4,9 @@ from constants import *
 from helpers import screen
 
 
+
+
+
 class Post:
     """
     A class used to represent post on Nitzagram
@@ -16,15 +19,32 @@ class Post:
         self.likes_counter = 0
 
 
-    def display(self):
-        """
-        Display the Post image/Text, description, location, likes and comments
-        on screen
+    def display_likes(self):
+        font=pygame.font.SysFont("Georgia",23)
+        text=font.render(f"Likes by  :{self.likes_counter}",True,BLACK)
+        screen.blits(text,(LIKE_TEXT_X_POS,LIKE_TEXT_Y_POS))
 
-        :return: None
-        """
-        # TODO: write me!
-        pass
+    def display_location(self):
+        font = pygame.font.SysFont("Verdana", 23)
+        text = font.render(self.location, True, BLACK)
+        screen.blits(text, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
+
+    def display_description(self):
+        font = pygame.font.SysFont("Garamond", 23)
+        text = font.render(self.description ,True, BLACK)
+        screen.blits(text, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
+
+    def display_comments(self):
+        for comment in self.comments:
+          comment.display()
+
+    def display_username(self):
+        font = pygame.font.SysFont("Tahoma", 23)
+        text = font.render(self.username, True, BLACK)
+        screen.blits(text, (USER_NAME_X_POS, USER_NAME_Y_POS))
+
+    def display(self):
+        self.display_likes()
 
 
     def display_comments(self):
@@ -58,8 +78,6 @@ class Post:
 
     def add_comment(self,text):
         self.comments.append(text)
-
-
 
 
 
