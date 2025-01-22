@@ -1,7 +1,7 @@
 import pygame
 from constants import *
 from helpers import *
-from Post import *
+from classes.Post import *
 
 class ImagePost(Post):
     def __init__(self, path, username,location,description):

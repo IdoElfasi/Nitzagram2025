@@ -18,19 +18,21 @@ class Post:
         self.comments = list()
         self.likes_counter = 0
 
-
+        
     def display_likes(self):
-        font=pygame.font.SysFont("Georgia",23)
+        font=pygame.font.SysFont("chalkduster.ttf",UI_FONT_SIZE)
         text=font.render(f"Likes by  :{self.likes_counter}",True,BLACK)
-        screen.blits(text,(LIKE_TEXT_X_POS,LIKE_TEXT_Y_POS))
+        print(int(LIKE_TEXT_X_POS))
+        print(int(LIKE_TEXT_Y_POS))
+        screen.blits(text, (LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS))
 
     def display_location(self):
-        font = pygame.font.SysFont("Verdana", 23)
+        font = pygame.font.SysFont("chalkduster.ttf", UI_FONT_SIZE)
         text = font.render(self.location, True, BLACK)
         screen.blits(text, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
 
     def display_description(self):
-        font = pygame.font.SysFont("Garamond", 23)
+        font = pygame.font.SysFont("chalkduster.ttf", UI_FONT_SIZE)
         text = font.render(self.description ,True, BLACK)
         screen.blits(text, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
 
@@ -38,7 +40,7 @@ class Post:
 
 
     def display_username(self):
-        font = pygame.font.SysFont("Tahoma", 23)
+        font = pygame.font.SysFont("chalkduster.ttf", UI_FONT_SIZE)
         text = font.render(self.username, True, BLACK)
         screen.blits(text, (USER_NAME_X_POS, USER_NAME_Y_POS))
 

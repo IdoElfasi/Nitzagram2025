@@ -1,7 +1,7 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
-
+from classes.ImagePost import ImagePost
 
 def main():
     # Set up the game display, clock and headline
@@ -18,8 +18,10 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-
+    image1 = "Images/noa_kirel.jpg"
+    image2 = ImagePost(image1, "nitay", "kfar kasem", "#freebeersheva")
     running = True
+    
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
@@ -30,7 +32,7 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-
+        image2.display()
         # Update display - without input update everything
         pygame.display.update()
 
