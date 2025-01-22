@@ -3,7 +3,7 @@ import pygame
 
 from constants import *
 from helpers import *
-from Post import *
+from classes.Post import *
 
 
 
@@ -25,10 +25,10 @@ class TextPost(Post):
 
 #placing text on the middle of the background
     def place_text(self):
-        middle=center_text(1,self.text,1)
-        font = pygame.font.SysFont("Georgia", 23)
+        font = pygame.font.SysFont("chalkduster.ttf", UI_FONT_SIZE)
         text=font.render(self.text,True,self.text_color)
-        screen.blits(text,middle)
+        middle=center_text(1,text,1)
+        screen.blit(text,middle)
 
 
 
